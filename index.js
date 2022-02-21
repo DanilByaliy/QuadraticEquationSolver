@@ -1,9 +1,12 @@
 const readline = require('readline');
 const { stdin: input, stdout: output } = require('process');
+const fs = require('fs');
 
 const rl = readline.createInterface({ input, output });
 
 let a, b, c, x1, x2;
+
+let path = process.argv[2];
 
 function calculate() {
   console.log(`Equation is: (${a}) x^2 + (${b}) x + (${c}) = 0`);
@@ -58,5 +61,33 @@ function inputC() {
     }
     calculate();
     rl.pause()
+  });
+}
+
+function readFromFile(path) {
+  fs.readFile(path, 'utf8', 
+  function(err, contents) {
+    if (err) {
+      console.log(`file ${path} does not exist`)
+      process.exit(1);
+    }
+
+    [a, b, c] = contents.split(' ');
+    
+    a = Number(a);
+    if (a === 0) {
+      console.log('Error. a cannot be 0');
+      process.exit(1);
+    }
+    b = Number(b);
+    c = Number(c);
+
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      console.log('invalid file format');
+      process.exit(1);
+    }
+
+    calculate();
+    process.exit(1);
   });
 }
