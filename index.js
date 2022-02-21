@@ -109,6 +109,3 @@ function readFromFile(path) {
 }
 
 launch();
-
-ajwnf hqRR Voar Vcqvac vzului vtPTRV;;V avcq
-A KEOW Jr2rvq298ytqyeawyo ;LQ'aLWEP VAWHFAHG ACB3RR43R FSFAWG
