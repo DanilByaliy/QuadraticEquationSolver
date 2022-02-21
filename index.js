@@ -37,6 +37,10 @@ function inputA() {
       console.log(`Error. Expected a valid real number, got ${a} instead`);
       inputA();
     }
+    if (a === 0) {
+      console.log('Error. a cannot be 0');
+      inputA();
+    }
     inputB();
   });
 }
@@ -71,9 +75,17 @@ function readFromFile(path) {
       console.log(`file ${path} does not exist`)
       process.exit(1);
     }
-
-    [a, b, c] = contents.split(' ');
     
+    [a, b, c] = contents.split(' ');
+
+    if ((contents.split(/\n/).length > 2) ||
+      a === undefined || a.includes(' ') || a === '' ||
+      b === undefined || b.includes(' ') || b === '' ||
+      b === undefined || c.includes(' ') || c === '') {
+        console.log('invalid file format');
+        process.exit(1);
+    }
+  
     a = Number(a);
     if (a === 0) {
       console.log('Error. a cannot be 0');
