@@ -6,7 +6,11 @@ const rl = readline.createInterface({ input, output });
 
 let a, b, c, x1, x2;
 
-let path = process.argv[2];
+function launch() {
+  let path = process.argv[2];
+  if (path) readFromFile(path);
+  else inputA();
+}
 
 function calculate() {
   console.log(`Equation is: (${a}) x^2 + (${b}) x + (${c}) = 0`);
@@ -103,3 +107,5 @@ function readFromFile(path) {
     process.exit(1);
   });
 }
+
+launch();
