@@ -1,0 +1,19 @@
+{
+  "name": "quadraticequationsolver",
+  "version": "1.0.0",
+  "description": "Firs lab  for Software Development Methodologies and Technologies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanilByaliy/QuadraticEquationSolver.git"
+  },
+  "author": "Danil Bialyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DanilByaliy/QuadraticEquationSolver/issues"
+  },
+  "homepage": "https://github.com/DanilByaliy/QuadraticEquationSolver#readme"
+}
